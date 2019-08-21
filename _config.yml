@@ -21,9 +21,9 @@ RSS: false
 # weibo_username:     adayxiang
 #zhihu_username:     adayxiang
 github_username:    adayxiang
-#facebook_username:  baiying.qiu.7
+facebook_username:  adayxiangY
 #jianshu_username:   e71990ada2fd
-#twitter_username:   adayxiang
+twitter_username:   adayxiang
 
 
 
@@ -98,10 +98,11 @@ service-worker: true
 
 # Friends
 friends: [
+    {
+       title: "Liang Tan",
+       href: "https://liangliangliangtan.github.io/"
+    }
     #{
-    #    title: "WY",
-    #    href: "http://zhengwuyang.com"
-    #},{
     #    title: "简书·BY",
     #    href: "http://www.jianshu.com/u/e71990ada2fd"
     #},{
