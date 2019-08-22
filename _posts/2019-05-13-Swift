@@ -1,0 +1,172 @@
+---
+Layout: post
+Title: Swift 4 new features
+Subtitle: Very happy Swift 4 is no longer a new language😅
+Date: 2019-05-13
+Author: adayxiang
+Header-img: img/post-bg-ios10.jpg
+Catalog: true
+Tags:
+    - iOS
+    - Swift
+---
+
+
+### private privilege expansion
+
+In Swift 4, `extension` can read the `private` variable.
+
+In Swift 3, if the variable of the body function is defined as `private`, its `extension` cannot read this variable, and it must be changed to `filePrivate`.
+
+### One-way interval
+
+The one-way interval is a new type, mainly divided into two types: the upper limit and the lower limit. The literal definition can be written as `...6` and `2...` directly.
+
+E.g
+
+```swift
+Let intArr = [0, 1, 2, 3, 4]
+
+Let arr1 = intArr[...3] // [0, 1, 2, 3]
+Let arr2 = intArr[3...] // [3, 4]
+```
+
+### String changes
+
+
+#### String operation simplified
+
+`String` Many operations that need to be done with `.characters` can be manipulated directly with a String .
+
+E.g:
+
+```swift
+Let greeting = "Hello, oh!"
+// No need to drill down to .characters
+Let n = greeting.count
+Let endOfSentence = greeting.index(of: "!")!
+
+```
+
+#### Add Substring type
+
+
+Swift 4 adds a new type called `Substring` for string fragments.
+
+When you create a fragment of a string, a `Substring` instance is generated. `Substring` is the same as `String`, because the substring and the original string share memory, so the operation of the substring is fast and efficient.
+
+```swift
+Let greeting = "Hi there! It's nice to meet you! 👋"
+Let endOfSentence = greeting.index(of: "!")!
+
+// Generate a Substring instance
+Let firstSentence = greeting[...endOfSentence]
+// firstSentence == "Hi there!"
+
+// `Substring` is the same as `String`
+Let shoutingSentence = firstSentence.uppercased()
+// shoutingSentence == "HI THERE!"
+```
+
+But note that a `Substring` retains the full `String` value generated from it. This can lead to unexpectedly high memory overhead when you pass a seemingly small `Substring`. So when using `Substring`, it's best to convert it to `String`.
+
+```swift
+Let newString = String(substring)
+```
+
+
+#### Wrap can be used without `\n`!
+
+Swift 3, string wrap to insert `\n`.
+E.g:
+
+![](https://ws4.sinaimg.cn/large/006tNc79gy1fjdam0wvhhj305d0283yf.jpg)
+
+In Swift 4 you can do this:
+
+![](https://ws2.sinaimg.cn/large/006tNc79gy1fjdas2yri4j303q0260sm.jpg)
+
+Strings wrapped with two ``" and `` will automatically add `\n` to wrap, which is more intuitive. Note: Line breaks and indents refer to the position of the second `"".
+
+Well, I think OK!
+
+#### Support for Unicode 9
+
+Swift 4 supports Unicode 9, [some issues have been fixed for modern emoticons] (https://oleb.net/blog/2016/12/emoji-4-0/).
+
+
+```swift
+Let family1 = "👨‍👩‍👧‍👦"
+Let family2 = "👨\u{200D}👩\u{200D}👧\u{200D}👦"
+Family1 == family2 // → true
+```
+
+Actually there is still this operation~
+
+### Add KeyPath data type
+
+KeyPath is a new data type added to Swift 4.
+
+Define two structures `Person` and `Book`
+
+```swift
+Struct Person {
+    Var name: String
+}
+
+Struct book {
+    Var title: String
+    Var authors: [Person]
+    Var primaryAuthor: Person {
+        Return authors.first!
+    }
+}
+
+Let abelson = Person(name: "Harold Abelson")
+Let sussman = Person(name: "Gerald Jay Sussman")
+Let book = Book(title: "Structure and Interpretation of Computer Programs", authors: [abelson, sussman])
+```
+```swift
+Book[keyPath: \Book.title]
+Book[keyPath: \Book.primaryAuthor.name]
+// quite equivalent
+Book.title
+book.primaryAuthor.name
+```
+
+Here `\Book.title` and `\Book.primaryAuthor.name` are KeyPath.
+
+KeyPath can be stitched with `.appending`
+
+```swift
+Let authorKeyPath = \Book.primaryAuthor
+Let nameKeyPath = authorKeyPath.appending(path: \.name)
+// nameKeyPath = \Book.primaryAuthor.name
+```
+
+### Added `swapAt()` function
+Swift 4 introduces a new way to swap two elements in a collection: `swapAt()`
+
+Swift 3 exchanges elements in the collection with `swap()`
+
+```swift
+Var numbers = [1,2,3,4,5]
+Swap(&numbers[0], &numbers[1])
+// numbers = [2,1,3,4,5]
+```
+
+Can be used directly in Swift 4
+
+```swift
+Var numbers = [1,2,3,4,5]
+numbers.swapAt(0,1)
+// numbers = [2,1,3,4,5]
+```
+
+
+
+### Other changes
+
+Other changes such as: ** new integer protocol **, ** generic subscript **, **NSNumber bridging**, etc.
+
+Can refer to: [whats new in swift4] (https://github.com/ole/whats-new-in-swift-4)
