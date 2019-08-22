@@ -1,17 +1,16 @@
 ---
-layout: post
-title: Git code rollback
-subtitle: correct posture of the rollback code
-date: 2019-06-16
-author: adayxiang
-header-img: img/post-bg-debug.png
-catalog: true
-tags:
-    - Mac
+layout:     post                       # 使用的布局（不需要改）
+title:      Git code rollback               # 标题 
+subtitle:   correct posture of the rollback code #副标题
+date:       2019-06-16                 # 时间
+author:     adayxiang                         # 作者
+header-img: img/post-bg-debug.png     #这篇文章标题背景图片
+catalog: true                         # 是否归档
+tags:                                #标签
+    - Mac
     - Terminal
     - Git
 ---
-
 
 > Personal documents that are not suitable for reading.
 

@@ -1,32 +1,16 @@
 ---
-
-layout: post
-
-title: Xcode Debug Instruction
-
-subtitle: Using Xcode's various debugging bug methods in iOS development
-
-date: 2019-07-18
-
-author: adayxiang
-
-header-img: img/post-bg-ios9-web.jpg
-
-catalog: true
-
-tags:
-
-    - iOS
-
+layout:     post                       # 使用的布局（不需要改）
+title:      Xcode Debug Instruction               # 标题 
+subtitle:   Using Xcode's various debugging bug methods in iOS development #副标题
+date:       2019-07-18               # 时间
+author:     adayxiang                         # 作者
+header-img: img/post-bg-ios9-web.jpg     #这篇文章标题背景图片
+catalog: true                         # 是否归档
+tags:                                #标签
+    - iOS
     - Development skills
-
     - Debug
-
 ---
-
- 
-
- 
 
 #前言
 
