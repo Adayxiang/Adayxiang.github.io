@@ -1,12 +1,12 @@
 ---
-Layout: post
-Title: Git code rollback
-Subtitle: correct posture of the rollback code
-Date: 2019-06-16
-Author: adayxiang
-Header-img: img/post-bg-debug.png
-Catalog: true
-Tags:
+layout: post
+title: Git code rollback
+subtitle: correct posture of the rollback code
+date: 2019-06-16
+author: adayxiang
+header-img: img/post-bg-debug.png
+catalog: true
+tags:
     - Mac
     - Terminal
     - Git

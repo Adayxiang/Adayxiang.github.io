@@ -1,20 +1,20 @@
 ---
 
-Layout: post
+layout: post
 
-Title: Xcode Debug Instruction
+title: Xcode Debug Instruction
 
-Subtitle: Using Xcode's various debugging bug methods in iOS development
+subtitle: Using Xcode's various debugging bug methods in iOS development
 
-Date: 2019-07-18
+date: 2019-07-18
 
-Author: adayxiang
+author: adayxiang
 
-Header-img: img/post-bg-ios9-web.jpg
+header-img: img/post-bg-ios9-web.jpg
 
-Catalog: true
+catalog: true
 
-Tags:
+tags:
 
     - iOS
 
